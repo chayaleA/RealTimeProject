@@ -1,0 +1,23 @@
+/*
+ * mutex.c
+ *
+ *  Created on: Jun 19, 2024
+ *      Author: hitmachut
+ */
+
+#include "mutex.h"
+
+void init_mutex()
+{
+	tmprMutex = xSemaphoreCreateMutex();
+	distMutex = xSemaphoreCreateMutex();
+	ledMutex = xSemaphoreCreateMutex();
+}
+void lock_mutex(SemaphoreHandle_t mutex)
+{
+	xSemaphoreTake(mutex, MAX_DELAY);
+}
+void unlock_mutex(SemaphoreHandle_t mutex)
+{
+	xSemaphoreGive(mutex);
+}

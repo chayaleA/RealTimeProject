@@ -1,0 +1,5 @@
+../Core/Src/led.c:15:6:init_led	8	static
+../Core/Src/led.c:19:6:led_on	8	static
+../Core/Src/led.c:23:6:led_off	8	static
+../Core/Src/led.c:27:6:led_blink	24	static
+../Core/Src/led.c:38:6:task_alarm	8	static

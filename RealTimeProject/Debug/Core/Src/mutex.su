@@ -1,0 +1,7 @@
+../Core/Src/mutex.c:10:6:init_mutex	8	static
+../Core/Src/mutex.c:16:6:lock_tmpr_mutex	8	static
+../Core/Src/mutex.c:20:6:unlock_tmpr_mutex	8	static
+../Core/Src/mutex.c:24:6:lock_dist_mutex	8	static
+../Core/Src/mutex.c:28:6:unlock_dist_mutex	8	static
+../Core/Src/mutex.c:32:6:lock_led_mutex	8	static
+../Core/Src/mutex.c:36:6:unlock_led_mutex	8	static

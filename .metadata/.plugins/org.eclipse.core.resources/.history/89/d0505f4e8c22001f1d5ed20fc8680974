@@ -1,0 +1,42 @@
+/*
+ * led.c
+ *
+ *  Created on: Jun 4, 2024
+ *      Author: hitmachut
+ */
+void init_led()
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);
+}
+void led_on()
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);
+}
+void led_off()
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);
+}
+void led_blink(uint32_t frequency)
+{
+	int i=0;
+	while(i<5)
+	{
+		led_on();
+		HAL_Delay(frequency);
+		led_off();
+		HAL_Delay(frequency);
+	}
+}
+void task_alarm()
+{
+	while(1)
+	{
+		if(Distance<10&&Temperature>20)
+				led_s=0;
+			else if(Distance>20&&Temperature<20)
+				led_s=1;
+			else if(Distance>10&&Temperature>30)
+				led_s=2;
+	}
+}
+

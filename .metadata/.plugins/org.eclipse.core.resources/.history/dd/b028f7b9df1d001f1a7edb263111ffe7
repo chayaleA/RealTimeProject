@@ -1,0 +1,15 @@
+/*
+ * task_manager.h
+ *
+ *  Created on: May 29, 2024
+ *      Author: hitmachut
+ */
+
+#ifndef INC_TASK_MANAGER_H_
+#define INC_TASK_MANAGER_H_
+
+#include "FreeRTOS.h"
+#include "task.h"
+
+
+#endif /* INC_TASK_MANAGER_H_ */

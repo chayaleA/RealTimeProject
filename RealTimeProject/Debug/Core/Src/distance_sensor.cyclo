@@ -1,0 +1,3 @@
+../Core/Src/distance_sensor.c:15:10:init_distance_sensor	1
+../Core/Src/distance_sensor.c:22:7:read_distance	6
+../Core/Src/distance_sensor.c:39:6:task_periodic_measure_distance	1

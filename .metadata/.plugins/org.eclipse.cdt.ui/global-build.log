@@ -1,0 +1,176 @@
+19:13:51 **** Incremental Build of configuration Debug for project RealTimeProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/distance_sensor.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/distance_sensor.d" -MT"Core/Src/distance_sensor.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/distance_sensor.o"
+arm-none-eabi-gcc "../Core/Src/led.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/led.d" -MT"Core/Src/led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/led.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/mutex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/mutex.d" -MT"Core/Src/mutex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/mutex.o"
+arm-none-eabi-gcc "../Core/Src/temperature_sensor.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/temperature_sensor.d" -MT"Core/Src/temperature_sensor.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/temperature_sensor.o"
+../Core/Src/temperature_sensor.c: In function 'read_temperature':
+../Core/Src/temperature_sensor.c:22:13: warning: unused variable 'x' [-Wunused-variable]
+   22 |         int x = HAL_ADC_PollForConversion(adc, 1000);
+      |             ^
+../Core/Src/temperature_sensor.c: In function 'task_measure_temperature':
+../Core/Src/temperature_sensor.c:35:17: warning: implicit declaration of function 'vTaskDelay' [-Wimplicit-function-declaration]
+   35 |                 vTaskDelay(1000);
+      |                 ^~~~~~~~~~
+In file included from ../Core/Src/temperature_sensor.c:9:
+At top level:
+../Core/Inc/mutex.h:18:26: warning: 'ledMutex' defined but not used [-Wunused-variable]
+   18 | static SemaphoreHandle_t ledMutex;
+      |                          ^~~~~~~~
+../Core/Src/distance_sensor.c: In function 'task_periodic_measure_distance':
+../Core/Inc/mutex.h:17:26: warning: 'distMutex' defined but not used [-Wunused-variable]
+   17 | static SemaphoreHandle_t distMutex;
+      |                          ^~~~~~~~~
+../Core/Inc/mutex.h:16:26: warning: 'tmprMutex' defined but not used [-Wunused-variable]
+   16 | static SemaphoreHandle_t tmprMutex;
+      |                          ^~~~~~~~~
+../Core/Src/distance_sensor.c:47:17: warning: implicit declaration of function 'vTaskDelay' [-Wimplicit-function-declaration]
+   47 |                 vTaskDelay(100);
+      |                 ^~~~~~~~~~
+In file included from ../Core/Src/led.c:12:
+../Core/Inc/mutex.h:18:26: warning: 'ledMutex' defined but not used [-Wunused-variable]
+   18 | static SemaphoreHandle_t ledMutex;
+      |                          ^~~~~~~~
+../Core/Inc/mutex.h:17:26: warning: 'distMutex' defined but not used [-Wunused-variable]
+   17 | static SemaphoreHandle_t distMutex;
+      |                          ^~~~~~~~~
+../Core/Inc/mutex.h:16:26: warning: 'tmprMutex' defined but not used [-Wunused-variable]
+   16 | static SemaphoreHandle_t tmprMutex;
+      |                          ^~~~~~~~~
+In file included from ../Core/Src/distance_sensor.c:9:
+At top level:
+../Core/Inc/mutex.h:18:26: warning: 'ledMutex' defined but not used [-Wunused-variable]
+   18 | static SemaphoreHandle_t ledMutex;
+      |                          ^~~~~~~~
+In file included from ../Core/Src/main.c:28:
+../Core/Inc/mutex.h:18:26: warning: 'ledMutex' defined but not used [-Wunused-variable]
+   18 | static SemaphoreHandle_t ledMutex;
+      |                          ^~~~~~~~
+../Core/Inc/mutex.h:17:26: warning: 'distMutex' defined but not used [-Wunused-variable]
+   17 | static SemaphoreHandle_t distMutex;
+      |                          ^~~~~~~~~
+../Core/Inc/mutex.h:16:26: warning: 'tmprMutex' defined but not used [-Wunused-variable]
+   16 | static SemaphoreHandle_t tmprMutex;
+      |                          ^~~~~~~~~
+../Core/Inc/mutex.h:17:26: warning: 'distMutex' defined but not used [-Wunused-variable]
+   17 | static SemaphoreHandle_t distMutex;
+      |                          ^~~~~~~~~
+../Core/Inc/mutex.h:16:26: warning: 'tmprMutex' defined but not used [-Wunused-variable]
+   16 | static SemaphoreHandle_t tmprMutex;
+      |                          ^~~~~~~~~
+In file included from ../Core/Inc/task_manager.h:14,
+                 from ../Core/Src/main.c:27:
+../Core/Inc/temperature_sensor.h:16:14: warning: 'Temperature' defined but not used [-Wunused-variable]
+   16 | static float Temperature;
+      |              ^~~~~~~~~~~
+In file included from ../Core/Inc/task_manager.h:13,
+                 from ../Core/Src/main.c:27:
+../Core/Inc/distance_sensor.h:21:15: warning: 'Distance' defined but not used [-Wunused-variable]
+   21 |  static float Distance;
+      |               ^~~~~~~~
+arm-none-eabi-gcc -o "RealTimeProject.elf" @"objects.list"   -mcpu=cortex-m3 -T"Y:\teachers for hitmachut\RealTime\group 4\RuthyRacheliYaelRacheli\RealTimeProject\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RealTimeProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RealTimeProject.elf
+ 
+arm-none-eabi-size  RealTimeProject.elf 
+arm-none-eabi-objdump -h -S RealTimeProject.elf  > "RealTimeProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  28604	    104	   8728	  37436	   923c	RealTimeProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: RealTimeProject.list
+ 
+19:26:10 **** Incremental Build of configuration Debug for project RealTimeProject ****
+make -j12 all 
+arm-none-eabi-size  RealTimeProject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28604	    104	   8728	  37436	   923c	RealTimeProject.elf
+Finished building: default.size.stdout
+ 
+19:29:10 **** Incremental Build of configuration Debug for project RealTimeProject ****
+make -j12 all 
+arm-none-eabi-size  RealTimeProject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28604	    104	   8728	  37436	   923c	RealTimeProject.elf
+Finished building: default.size.stdout
+ 
+19:32:36 **** Incremental Build of configuration Debug for project RealTimeProject ****
+make -j12 all 
+arm-none-eabi-size  RealTimeProject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28604	    104	   8728	  37436	   923c	RealTimeProject.elf
+Finished building: default.size.stdout
+ 
+19:34:23 **** Incremental Build of configuration Debug for project RealTimeProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/task_manager.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/task_manager.d" -MT"Core/Src/task_manager.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/task_manager.o"
+In file included from ../Core/Inc/task_manager.h:14,
+                 from ../Core/Src/task_manager.c:7:
+../Core/Inc/temperature_sensor.h:16:14: warning: 'Temperature' defined but not used [-Wunused-variable]
+   16 | static float Temperature;
+      |              ^~~~~~~~~~~
+In file included from ../Core/Inc/task_manager.h:13,
+                 from ../Core/Src/task_manager.c:7:
+../Core/Inc/distance_sensor.h:21:15: warning: 'Distance' defined but not used [-Wunused-variable]
+   21 |  static float Distance;
+      |               ^~~~~~~~
+arm-none-eabi-gcc -o "RealTimeProject.elf" @"objects.list"   -mcpu=cortex-m3 -T"Y:\teachers for hitmachut\RealTime\group 4\RuthyRacheliYaelRacheli\RealTimeProject\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RealTimeProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RealTimeProject.elf
+ 
+arm-none-eabi-size  RealTimeProject.elf 
+arm-none-eabi-objdump -h -S RealTimeProject.elf  > "RealTimeProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  28604	    104	   8728	  37436	   923c	RealTimeProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: RealTimeProject.list
+ 
+19:36:51 **** Incremental Build of configuration Debug for project RealTimeProject ****
+make -j12 all 
+arm-none-eabi-size  RealTimeProject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28604	    104	   8728	  37436	   923c	RealTimeProject.elf
+Finished building: default.size.stdout
+ 
+19:38:59 **** Incremental Build of configuration Debug for project RealTimeProject ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/led.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/led.d" -MT"Core/Src/led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/led.o"
+arm-none-eabi-gcc "../Core/Src/task_manager.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/task_manager.d" -MT"Core/Src/task_manager.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/task_manager.o"
+In file included from ../Core/Inc/task_manager.h:14,
+                 from ../Core/Src/task_manager.c:7:
+../Core/Inc/temperature_sensor.h:16:14: warning: 'Temperature' defined but not used [-Wunused-variable]
+   16 | static float Temperature;
+      |              ^~~~~~~~~~~
+In file included from ../Core/Inc/task_manager.h:13,
+                 from ../Core/Src/task_manager.c:7:
+../Core/Inc/distance_sensor.h:21:15: warning: 'Distance' defined but not used [-Wunused-variable]
+   21 |  static float Distance;
+      |               ^~~~~~~~
+In file included from ../Core/Src/led.c:12:
+../Core/Inc/mutex.h:18:26: warning: 'ledMutex' defined but not used [-Wunused-variable]
+   18 | static SemaphoreHandle_t ledMutex;
+      |                          ^~~~~~~~
+../Core/Inc/mutex.h:17:26: warning: 'distMutex' defined but not used [-Wunused-variable]
+   17 | static SemaphoreHandle_t distMutex;
+      |                          ^~~~~~~~~
+../Core/Inc/mutex.h:16:26: warning: 'tmprMutex' defined but not used [-Wunused-variable]
+   16 | static SemaphoreHandle_t tmprMutex;
+      |                          ^~~~~~~~~
+arm-none-eabi-gcc -o "RealTimeProject.elf" @"objects.list"   -mcpu=cortex-m3 -T"Y:\teachers for hitmachut\RealTime\group 4\RuthyRacheliYaelRacheli\RealTimeProject\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RealTimeProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RealTimeProject.elf
+ 
+arm-none-eabi-size  RealTimeProject.elf 
+arm-none-eabi-objdump -h -S RealTimeProject.elf  > "RealTimeProject.list"
+   text	   data	    bss	    dec	    hex	filename
+  28604	    104	   8728	  37436	   923c	RealTimeProject.elf
+Finished building: default.size.stdout
+ 
+Finished building: RealTimeProject.list
+ 
+19:39:42 **** Incremental Build of configuration Debug for project RealTimeProject ****
+make -j12 all 
+arm-none-eabi-size  RealTimeProject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28604	    104	   8728	  37436	   923c	RealTimeProject.elf
+Finished building: default.size.stdout
+ 
